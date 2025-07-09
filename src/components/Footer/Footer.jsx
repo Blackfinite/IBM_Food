@@ -1,16 +1,18 @@
 import React, { useState } from 'react';
 import { FaRegEnvelope } from "react-icons/fa";
 import { BiChevronRight } from "react-icons/bi";
+import { NavLink } from 'react-router-dom';
 
 const navItems = [
   { name: 'Home', link: '/' },
-  { name: 'AboutUs', link: '/about' },
+  { name: 'About Us', link: '/about' },
   { name: 'Menu', link: '/menu' },
   { name: 'Contact', link: '/contact' },
 ];
 
 const Footer = () => {
   const [email, setEmail] = useState('');
+
   const handleSubmit = (e) => {
     e.preventDefault();
     alert(`Thanks For Subscribing! You will get notified on ${email}`);
@@ -24,7 +26,7 @@ const Footer = () => {
 
           {/* Branding & Subscription */}
           <div className='space-y-6'>
-            <h2 className='text-4xl sm:text-5xl md:text-5xl font-bold font-sacramento text-green-400 animate-pulse'>
+            <h2 className='text-4xl sm:text-5xl font-bold font-sacramento text-green-400 animate-pulse'>
               Desi Thaat
             </h2>
             <p className='text-green-100/90 text-sm font-savramento italic'>
@@ -32,7 +34,7 @@ const Footer = () => {
               Savor Handcrafted Perfection, Delivered With Care.
             </p>
 
-            <form onSubmit={handleSubmit} className='relative mt-4 group '>
+            <form onSubmit={handleSubmit} className='relative mt-4 group'>
               <div className='flex items-center gap-2 mb-2'>
                 <FaRegEnvelope className='text-green-300 animate-pulse' />
                 <span className='font-bold text-green-300'>Get Exclusive Offers</span>
@@ -61,7 +63,7 @@ const Footer = () => {
             </form>
           </div>
 
-          {/* Navigation */}
+          {/* Navigation Links */}
           <div className='flex justify-center'>
             <div className='space-y-4'>
               <h3 className='text-xl font-semibold mb-4 border-l-5 border-green-400 pl-3 font-merriweather italic text-green-300'>
@@ -70,22 +72,25 @@ const Footer = () => {
               <ul className='space-y-3'>
                 {navItems.map(item => (
                   <li key={item.name}>
-                    <a
-                      href={item.link}
+                    <NavLink
+                      to={item.link}
                       className='flex items-center hover:text-green-300 transition-all group font-lora hover:pl-2'
                     >
                       <BiChevronRight className='mr-2 text-green-400 group-hover:animate-bounce' />
                       <span className='hover:italic'>{item.name}</span>
-                    </a>
+                    </NavLink>
                   </li>
                 ))}
               </ul>
             </div>
           </div>
 
+          {/* Optional: Add third column if needed */}
+          {/* Example: Contact Info, Address, Social Links, etc. */}
+
         </div>
 
-        {/* Bottom Text */}
+        {/* Footer Bottom */}
         <div className='border-t border-green-800 pt-8 mt-8 text-center'>
           <p className='text-green-400 text-lg mb-2 font-playfair'>
             &copy; 2025 Desi Thaat. All rights reserved.
