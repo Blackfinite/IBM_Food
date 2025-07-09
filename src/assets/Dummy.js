@@ -1,5 +1,5 @@
 import Kebab from "./kebab.jpg";
-import ChickenTikka from "./chickenTikka.jpg";
+import ChickenTikka from "./ChickenTikka.jpg";
 import DesiChowmein from "./DesiChowmein.jpg"
 import ChickenChargha from "./ChickenChargha.jpg";
 import PaneerTikka from "./PaneerTikka.jpg";
